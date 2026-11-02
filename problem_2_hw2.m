@@ -1,3 +1,6 @@
+% MATLAB Script
+% Press Ctrl+Enter to run
+
 %plot signals and backward diffrences 
 %backward diffrence is y[n]=x[n]-x[n-1] 
 
@@ -5,7 +8,7 @@
 
 %part a
 clear; 
-cac; 
+clc; 
 close all; 
 
 %define time range in discrete 
@@ -13,20 +16,20 @@ close all;
 n=-5:5; 
 
 %logical index for range 
-inside= (n >= -4) & (n >=4);
+inside= (n >= -4) & (n <=4);
 %define x1[n] 
 x1=zeros(size(n)); 
-x1(inside) = 16 - n(inside)^2;
+x1(inside) = 16 - n(inside).^2;
 
 %define x2[n] 
 x2=2*ones(size(n)); 
-x1(inside) = 18 - n(inside)^2;
+x2(inside) = 18 - n(inside).^2;
 
 %calculate backward diffrence 
 y1= x1-[0,x1(1:end-1)];
 
 % x2 is equal to 2 outside its specified range 
-y1= x2-[2,x2(1:end-1)];
+y2= x2-[2,x2(1:end-1)];
 
 %plot signals 
 figure; 
@@ -52,9 +55,9 @@ xlabel('n');
 ylabel('amplitude');
 grid on; 
 
-subplot(2,2,3); 
-stem(n,y1,'filled');
+subplot(2,2,4); 
+stem(n,y2,'filled');
 title('y_2[n]=x_2[n]-x_2[n-1]');
 xlabel('n');
 ylabel('amplitude');
-grid on; 
+grid on;
