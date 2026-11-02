@@ -6,7 +6,7 @@
 
 %use stem() function because these are discrete
 
-%part a
+%part a-----------------------------------------------------------------------------------------
 clear; 
 clc; 
 close all; 
@@ -60,4 +60,39 @@ stem(n,y2,'filled');
 title('y_2[n]=x_2[n]-x_2[n-1]');
 xlabel('n');
 ylabel('amplitude');
+grid on;
+
+%part b-----------------------------------------------------------------------------------------
+%define x3[n] 
+x3=zeros(size(n)); 
+x3(inside) = 18 - n(inside).^2;
+y3= x3-[0,x3(1:end-1)];
+
+%plot 
+figure; 
+subplot(2,1,1); 
+stem(n,x3,'filled');
+title('x_3[n]');
+xlabel('n');
+ylabel('amplitude');
+grid on; 
+
+subplot(2,1,2); 
+stem(n,y3,'filled');
+title('y_3[n]=x_3[n]-x_3[n-1]');
+xlabel('n');
+ylabel('amplitude');
+grid on; 
+
+%part c-----------------------------------------------------------------------------------------
+%calculate accumulation of y2[n] 
+x_acc=cumsum(y2); %cumulative sum 
+
+%plot 
+figure; 
+
+stem(n,x_acc,'filled');
+title('Accumlation of y_2[n]');
+xlabel('n');
+ylabel('Amplitude');
 grid on;
