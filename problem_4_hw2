@@ -1,1 +1,18 @@
+n_4= 0:54; 
+x1_4= (5/4)*cos(452*pi*n_4/55 + pi/4); 
+x2_4= (5/4)*cos(12*pi*n_4/55 + pi/4); 
 
+figure; 
+subplot(2,1,1);
+stem(n_4,x1_4,'b','filled');
+title('Part (c): x[n]= (5/4)*cos(452*pi*n_4/55 + pi/4)');
+xlabel('n(samples)'); 
+ylabel('x_1[n]');
+grid on; 
+
+subplot(2,1,2);
+stem(n_4,x2_4,'b','filled');
+title('Part (c): x[n]= (5/4)*cos(12*pi*n_4/55 + pi/4)');
+xlabel('n(samples)'); 
+ylabel('x_2[n]');
+grid on; 
