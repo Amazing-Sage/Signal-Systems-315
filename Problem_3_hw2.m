@@ -128,3 +128,36 @@ fprintf('Fundamental Frequency: f = %.6f cycles/sample\n', f_c);
 fprintf('Fundamental Angular Frequency: w = %.6f rad/sample\n', w_c);
 fprintf('Average Power: P = %.4f (peanut butter and jelly sandwiches)^2\n', P_c);
 
+%(d)----------------------------------------------------------------------------------------------------
+%non periodic 
+n_d = 0:112; 
+x_d= 3*exp(((-5*pi*n_d)/112) + (1j*(7*pi/100))*n_d);
+
+figure; 
+subplot(4,1,1);
+stem(n_d,abs(x_d),'b','filled');
+title('Part (d): magnitude, non-periodic');
+xlabel('n(samples)'); 
+ylabel('x[n]');
+grid on; 
+
+subplot(4,1,2);
+stem(n_d,angle(x_d),'b','filled');
+title('Part (d): phase, non-periodic');
+xlabel('n(samples)'); 
+ylabel('Phase(rad)');
+grid on; 
+
+subplot(4,1,3);
+stem(n_d,real(x_d),'b','filled');
+title('Part (d): real part, non-periodic');
+xlabel('n(samples)'); 
+ylabel('Re(x[n])');
+grid on; 
+
+subplot(4,1,4);
+stem(n_d,imag(x_d),'b','filled');
+title('Part (d): imaginary part, non-periodic');
+xlabel('n(samples)'); 
+ylabel('Im(x[n])');
+grid on; 
