@@ -13,7 +13,7 @@ close all;
 
 %define time range in discrete 
 %because n is -4<=t<=4 we use -5 and 5
-n=-5:5; 
+n=-8:; 
 
 %logical index for range 
 inside= (n >= -4) & (n <=4);
