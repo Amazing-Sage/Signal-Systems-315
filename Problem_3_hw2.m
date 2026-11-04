@@ -60,21 +60,19 @@ f_c= 1/N_c; %fundamental frequency
 %plot 2 periods -----------------------------------
 figure; 
 subplot(4,1,1);
-stem(n_c,angle(x_c),'b','filled');
+stem(n_c,abs(x_c),'b','filled');
 title('Part (c): magnitude');
 xlabel('n(samples)'); 
 ylabel('x[n]');
 grid on; 
 
-figure; 
 subplot(4,1,2);
-stem(n_c,abs(x_c),'b','filled');
+stem(n_c,angle(x_c),'b','filled');
 title('Part (c): phase');
 xlabel('n(samples)'); 
 ylabel('Phase(rad)');
 grid on; 
 
-figure; 
 subplot(4,1,3);
 stem(n_c,real(x_c),'b','filled');
 title('Part (c): real part');
@@ -82,8 +80,7 @@ xlabel('n(samples)');
 ylabel('Re(x[n])');
 grid on; 
 
-figure; 
-subplot(4,1,1);
+subplot(4,1,4);
 stem(n_c,imag(x_c),'b','filled');
 title('Part (c): imaginary part');
 xlabel('n(samples)'); 
@@ -97,21 +94,19 @@ P_c= mean(abs(x_c_one).^2); %avg power
 
 figure; 
 subplot(4,1,1);
-stem(n_c_one,angle(x_c_one),'r','filled');
+stem(n_c_one,abs(x_c_one),'r','filled');
 title('Part (c): magnitude');
 xlabel('n(samples)'); 
 ylabel('x[n]');
 grid on; 
 
-figure; 
 subplot(4,1,2);
-stem(n_c_one,abs(x_c_one),'r','filled');
+stem(n_c_one,angle(x_c_one),'r','filled');
 title('Part (c): phase');
 xlabel('n(samples)'); 
 ylabel('Phase(rad)');
 grid on; 
 
-figure; 
 subplot(4,1,3);
 stem(n_c_one,real(x_c_one),'r','filled');
 title('Part (c): real part');
@@ -119,8 +114,7 @@ xlabel('n(samples)');
 ylabel('Re(x[n])');
 grid on; 
 
-figure; 
-subplot(4,1,1);
+subplot(4,1,4);
 stem(n_c_one,imag(x_c_one),'r','filled');
 title('Part (c): imaginary part');
 xlabel('n(samples)'); 
