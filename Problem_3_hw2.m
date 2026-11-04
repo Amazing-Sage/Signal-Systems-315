@@ -2,7 +2,7 @@ close all;
 clear;
 clc;
 
-%(a)------------------------------------------------------------------------
+%(a)----------------------------------------------------------------------------------------------------
 N_a = 63; % fundamental per
 n_a = 0:2*N_a-1; 
 x_a = (8/3)*sin(8*pi*n_a/63 + 3*pi/5); 
@@ -37,3 +37,16 @@ fprintf('Fundamental Period: N = %d samples\n', N_a);
 fprintf('Fundamental Frequency: f = %.6f cycles/sample\n', f_a);
 fprintf('Fundamental Angular Frequency: w = %.6f rad/sample\n', w_a);
 fprintf('Average Power: P = %.4f (peanut butter and jelly sandwiches)^2\n', P_a);
+
+%(b)----------------------------------------------------------------------------------------------------
+n_b = 0:100; 
+x_b= (8/3)*sin(8*pi*n_b/24 + 3*pi/5);
+
+figure;
+stem(n_b, x_b,'b', 'filled');
+title('Part (b): x[n]= (8/3)*sin(8*pi*n_b/24 + 3*pi/5)');
+xlabel('n (samples)');
+ylabel('x[n] (peanut butter and jelly sandwiches)');
+grid on;
+
+%(c)----------------------------------------------------------------------------------------------------
