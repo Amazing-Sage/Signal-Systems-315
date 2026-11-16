@@ -1,6 +1,6 @@
 %using the equation: y[n] -y[n-1]+0.5y[n-2]= -2x[n]+3x[n-1]
 b=[-2,3]; % x terms on right_shift
-a=[1,-1,-0.5]; %y terms left side 
+a=[1,-1,0.5]; %y terms left side 
 
 N=21; 
 n=0:N-1; 
